@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dacj1du4jnwm1"]
+
+[ext_resource type="Script" path="res://scripts/dining_stool.gd" id="1_46hfv"]
+[ext_resource type="Texture2D" uid="uid://drgbx3sxdt3th" path="res://assets/stool.png" id="1_c67tw"]
+
+[node name="Dining Stool" type="Node2D"]
+script = ExtResource("1_46hfv")
+
+[node name="Stool" type="Sprite2D" parent="."]
+texture = ExtResource("1_c67tw")
+
+[node name="Sit Position" type="Marker2D" parent="."]
+position = Vector2(0, -4)

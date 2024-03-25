@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1beafgjagvk1"]
+
+[ext_resource type="Texture2D" uid="uid://45ssjfaqg3bg" path="res://assets/Resturante.png" id="1_ln46m"]
+[ext_resource type="PackedScene" uid="uid://dw23ybckaeqp1" path="res://objects/Kitty.tscn" id="2_cy7r5"]
+
+[node name="El Resturante" type="Node2D"]
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_ln46m")
+
+[node name="Kitty" parent="." instance=ExtResource("2_cy7r5")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="KitchenCounter" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KitchenCounter"]
+build_mode = 1
+polygon = PackedVector2Array(-95, -99, -97, 36, 106, 38, 104, -47, 108, -105, 84, -99, 12, -99, -18, -104, -46, -104)

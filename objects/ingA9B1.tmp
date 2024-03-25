@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://d676pgcwkjs1"]
+
+[ext_resource type="Script" path="res://scripts/ingredient.gd" id="1_24fa0"]
+[ext_resource type="Texture2D" uid="uid://bbnlahg2c8cft" path="res://assets/ingredients.png" id="1_so7ua"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p6r77"]
+bounce = 0.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_410na"]
+radius = 5.0
+
+[node name="Ingredient" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 7
+input_pickable = true
+physics_material_override = SubResource("PhysicsMaterial_p6r77")
+gravity_scale = 0.0
+can_sleep = false
+linear_damp = 1.0
+angular_damp = 1.0
+script = ExtResource("1_24fa0")
+INGREDIENT = null
+
+[node name="Spritesheet" type="Sprite2D" parent="."]
+texture = ExtResource("1_so7ua")
+hframes = 4
+vframes = 2
+frame = 2
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_410na")

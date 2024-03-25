@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://btbgprnqgwjs2"]
+
+[ext_resource type="Texture2D" uid="uid://c43jr3g106ivp" path="res://assets/customers.png" id="1_2ef55"]
+[ext_resource type="Script" path="res://scripts/customer.gd" id="1_p5sfc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8rn22"]
+
+[node name="Customer" type="RigidBody2D"]
+script = ExtResource("1_p5sfc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8rn22")
+
+[node name="Spritesheet" type="Sprite2D" parent="."]
+texture = ExtResource("1_2ef55")
+hframes = 4
+vframes = 2

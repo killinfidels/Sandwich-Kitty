@@ -1,14 +1,38 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1beafgjagvk1"]
+[gd_scene load_steps=8 format=3 uid="uid://d1beafgjagvk1"]
 
 [ext_resource type="Texture2D" uid="uid://45ssjfaqg3bg" path="res://assets/Resturante.png" id="1_vkfvs"]
 [ext_resource type="Script" path="res://levels/el_resturante.gd" id="1_y2drw"]
 [ext_resource type="PackedScene" uid="uid://d676pgcwkjs1" path="res://objects/ingredient.tscn" id="2_0ukia"]
 [ext_resource type="PackedScene" uid="uid://dw23ybckaeqp1" path="res://objects/kitty.tscn" id="3_4hsik"]
 [ext_resource type="PackedScene" uid="uid://du574glok87m4" path="res://splash_screen.tscn" id="5_33odo"]
+[ext_resource type="PackedScene" uid="uid://ekhbfh3cp4xk" path="res://objects/sandwich.tscn" id="5_sctna"]
 [ext_resource type="PackedScene" uid="uid://dacj1du4jnwm1" path="res://objects/dining_stool.tscn" id="6_x314f"]
 
 [node name="El Resturante" type="Node2D"]
 script = ExtResource("1_y2drw")
+
+[node name="Chairs" type="Node" parent="."]
+
+[node name="StoolLeft1" parent="Chairs" instance=ExtResource("6_x314f")]
+position = Vector2(-124, 27)
+
+[node name="StoolLeft2" parent="Chairs" instance=ExtResource("6_x314f")]
+position = Vector2(-125, -24)
+
+[node name="StoolTop1" parent="Chairs" instance=ExtResource("6_x314f")]
+position = Vector2(-84, -61)
+
+[node name="Dining Stool4" parent="Chairs" instance=ExtResource("6_x314f")]
+position = Vector2(-2, -59)
+
+[node name="Dining Stool5" parent="Chairs" instance=ExtResource("6_x314f")]
+position = Vector2(79, -60)
+
+[node name="Dining Stool6" parent="Chairs" instance=ExtResource("6_x314f")]
+position = Vector2(122, 21)
+
+[node name="Dining Stool7" parent="Chairs" instance=ExtResource("6_x314f")]
+position = Vector2(120, 72)
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(2.00066, -1.9991)
@@ -46,6 +70,9 @@ INGREDIENT = 6
 position = Vector2(50, 62)
 INGREDIENT = 7
 
+[node name="Sandwich" parent="." instance=ExtResource("5_sctna")]
+position = Vector2(-6, 44)
+
 [node name="Kitty" parent="." instance=ExtResource("3_4hsik")]
 push_force = 100.0
 throw_force = 500.0
@@ -76,24 +103,3 @@ enable = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
-
-[node name="StoolLeft1" parent="." instance=ExtResource("6_x314f")]
-position = Vector2(-124, 27)
-
-[node name="StoolLeft2" parent="." instance=ExtResource("6_x314f")]
-position = Vector2(-125, -24)
-
-[node name="StoolTop1" parent="." instance=ExtResource("6_x314f")]
-position = Vector2(-84, -61)
-
-[node name="Dining Stool4" parent="." instance=ExtResource("6_x314f")]
-position = Vector2(-2, -59)
-
-[node name="Dining Stool5" parent="." instance=ExtResource("6_x314f")]
-position = Vector2(79, -60)
-
-[node name="Dining Stool6" parent="." instance=ExtResource("6_x314f")]
-position = Vector2(122, 21)
-
-[node name="Dining Stool7" parent="." instance=ExtResource("6_x314f")]
-position = Vector2(120, 72)

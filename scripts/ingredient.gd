@@ -15,8 +15,8 @@ func _ready():
 	super._ready()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	super._process(_delta)
+func _process(delta):
+	super._process(delta)
 	if Input.is_action_just_pressed("debug"):
 		print(ingredient_strings[INGREDIENT])
 		print("is_held: ", is_held)

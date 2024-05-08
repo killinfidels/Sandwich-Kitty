@@ -1,0 +1,55 @@
+[gd_scene load_steps=12 format=3 uid="uid://ekhbfh3cp4xk"]
+
+[ext_resource type="Script" path="res://scripts/sandwich.gd" id="1_ajrq7"]
+[ext_resource type="Texture2D" uid="uid://bl8h63nneaeh8" path="res://assets/sandwich/bottom bread.png" id="2_ai1ws"]
+[ext_resource type="Texture2D" uid="uid://cja7rssa2b50o" path="res://assets/sandwich/cheese.png" id="3_uh5mc"]
+[ext_resource type="Texture2D" uid="uid://cr5vv0dwwyud3" path="res://assets/sandwich/cucumber.png" id="4_a7wtq"]
+[ext_resource type="Texture2D" uid="uid://daya2roomjgts" path="res://assets/sandwich/egg.png" id="5_modl8"]
+[ext_resource type="Texture2D" uid="uid://b1s4xwdk5ca21" path="res://assets/sandwich/ketchup.png" id="6_8lq4e"]
+[ext_resource type="Texture2D" uid="uid://cw0gsjalatvpx" path="res://assets/sandwich/meat.png" id="7_d83x6"]
+[ext_resource type="Texture2D" uid="uid://t0ucjh2fagty" path="res://assets/sandwich/mustard.png" id="8_eyt68"]
+[ext_resource type="Texture2D" uid="uid://pwba3rhj451d" path="res://assets/sandwich/top bread.png" id="9_ubahd"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6kv7e"]
+bounce = 0.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3jen8"]
+radius = 8.0
+
+[node name="Sandwich" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_6kv7e")
+gravity_scale = 0.0
+linear_damp = 1.0
+angular_damp = 1.0
+script = ExtResource("1_ajrq7")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3jen8")
+
+[node name="BottomBread" type="Sprite2D" parent="."]
+texture = ExtResource("2_ai1ws")
+
+[node name="Cheese" type="Sprite2D" parent="."]
+texture = ExtResource("3_uh5mc")
+
+[node name="Egg" type="Sprite2D" parent="."]
+texture = ExtResource("5_modl8")
+
+[node name="Meat" type="Sprite2D" parent="."]
+texture = ExtResource("7_d83x6")
+
+[node name="Cucumber" type="Sprite2D" parent="."]
+texture = ExtResource("4_a7wtq")
+
+[node name="TopBread" type="Sprite2D" parent="."]
+texture = ExtResource("9_ubahd")
+
+[node name="Mustard" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("8_eyt68")
+
+[node name="Ketchup" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("6_8lq4e")

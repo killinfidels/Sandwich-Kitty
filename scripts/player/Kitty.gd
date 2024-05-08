@@ -98,7 +98,7 @@ func interact():
 			print()
 			item = bodies[0]
 		
-	if !item is Ingredient: # places item if there isnt one to pick up
+	if !item is Ingredient and !item is Sandwich: # places item if there isnt one to pick up
 		return
 	elif heldItems.size() >= carry_limit: # if an item is infront, check inv capacity
 		print("Carry limit reached!")

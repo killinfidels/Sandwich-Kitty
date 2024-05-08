@@ -17,8 +17,7 @@ var ingredients = []
 func _ready():
 	for item in ingredient_sprites:
 		pass#item.visible = false
-		
-		super._ready()
+	super._ready()
 
 func _process(delta):
 	super._process(delta)

@@ -12,6 +12,7 @@ input_pickable = true
 physics_material_override = SubResource("PhysicsMaterial_p6r77")
 gravity_scale = 0.0
 can_sleep = false
+linear_damp = 1.0
 angular_damp = 1.0
 script = ExtResource("1_hnd6f")
 

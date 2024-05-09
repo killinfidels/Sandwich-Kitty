@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dacj1du4jnwm1"]
 
-[ext_resource type="Script" path="res://scripts/dining_stool.gd" id="1_46hfv"]
+[ext_resource type="Script" path="res://scripts/objects/dining_stool.gd" id="1_46hfv"]
 [ext_resource type="Texture2D" uid="uid://drgbx3sxdt3th" path="res://assets/stool.png" id="1_c67tw"]
 
 [node name="Dining Stool" type="Node2D"]

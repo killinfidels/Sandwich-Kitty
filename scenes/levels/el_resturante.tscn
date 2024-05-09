@@ -1,0 +1,105 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1beafgjagvk1"]
+
+[ext_resource type="Script" path="res://scripts/map/el_resturante.gd" id="1_6kmf4"]
+[ext_resource type="PackedScene" uid="uid://dacj1du4jnwm1" path="res://scenes/objects/dining_stool.tscn" id="2_6cs36"]
+[ext_resource type="Texture2D" uid="uid://45ssjfaqg3bg" path="res://assets/Resturante.png" id="3_mob7j"]
+[ext_resource type="PackedScene" uid="uid://d676pgcwkjs1" path="res://scenes/objects/ingredient.tscn" id="4_et8r6"]
+[ext_resource type="PackedScene" uid="uid://ekhbfh3cp4xk" path="res://scenes/objects/sandwich.tscn" id="5_yahg8"]
+[ext_resource type="PackedScene" uid="uid://dw23ybckaeqp1" path="res://scenes/player/kitty.tscn" id="6_dedbo"]
+[ext_resource type="PackedScene" uid="uid://du574glok87m4" path="res://scenes/game/splash_screen.tscn" id="7_e6sct"]
+
+[node name="El Resturante" type="Node2D"]
+script = ExtResource("1_6kmf4")
+
+[node name="Chairs" type="Node" parent="."]
+
+[node name="StoolLeft1" parent="Chairs" instance=ExtResource("2_6cs36")]
+position = Vector2(-124, 27)
+
+[node name="StoolLeft2" parent="Chairs" instance=ExtResource("2_6cs36")]
+position = Vector2(-125, -24)
+
+[node name="StoolTop1" parent="Chairs" instance=ExtResource("2_6cs36")]
+position = Vector2(-84, -61)
+
+[node name="Dining Stool4" parent="Chairs" instance=ExtResource("2_6cs36")]
+position = Vector2(-2, -59)
+
+[node name="Dining Stool5" parent="Chairs" instance=ExtResource("2_6cs36")]
+position = Vector2(79, -60)
+
+[node name="Dining Stool6" parent="Chairs" instance=ExtResource("2_6cs36")]
+position = Vector2(122, 21)
+
+[node name="Dining Stool7" parent="Chairs" instance=ExtResource("2_6cs36")]
+position = Vector2(120, 72)
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(2.00066, -1.9991)
+rotation = -3.14159
+texture = ExtResource("3_mob7j")
+
+[node name="Ingredient" parent="." instance=ExtResource("4_et8r6")]
+position = Vector2(-34, 25)
+
+[node name="Ingredient2" parent="." instance=ExtResource("4_et8r6")]
+position = Vector2(-77, 23)
+INGREDIENT = 1
+
+[node name="Ingredient3" parent="." instance=ExtResource("4_et8r6")]
+position = Vector2(-57, -19)
+INGREDIENT = 2
+
+[node name="Ingredient4" parent="." instance=ExtResource("4_et8r6")]
+position = Vector2(41, 2)
+INGREDIENT = 3
+
+[node name="Ingredient5" parent="." instance=ExtResource("4_et8r6")]
+position = Vector2(19, 66)
+INGREDIENT = 4
+
+[node name="Ingredient6" parent="." instance=ExtResource("4_et8r6")]
+position = Vector2(-26, 68)
+INGREDIENT = 5
+
+[node name="Ingredient7" parent="." instance=ExtResource("4_et8r6")]
+position = Vector2(-57, 49)
+INGREDIENT = 6
+
+[node name="Ingredient8" parent="." instance=ExtResource("4_et8r6")]
+position = Vector2(50, 62)
+INGREDIENT = 7
+
+[node name="Sandwich" parent="." instance=ExtResource("5_yahg8")]
+position = Vector2(-6, 44)
+
+[node name="Kitty" parent="." instance=ExtResource("6_dedbo")]
+push_force = 100.0
+throw_force = 500.0
+look_direction = Vector2(0, -1)
+carry_limit = 10
+INPUT_SCHEME = 1
+
+[node name="KitchenCounter" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2(2.00066, -1.9991)
+rotation = -3.14159
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KitchenCounter"]
+visible = false
+build_mode = 1
+polygon = PackedVector2Array(-95, -99, -97, 36, 106, 38, 104, -47, 108, -105, 84, -99, 12, -99, -18, -104, -46, -104)
+disabled = true
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="KitchenCounter"]
+polygon = PackedVector2Array(106.001, 38.0006, 104.001, -46.9994, 108, -103.999, 108, -140.999, 184, -141, 184.001, 82.0004, -165.999, 85.0013, -165, -137.999, -92.9997, -137.999, -96.9993, 4.00115, -96.9992, 36.0011)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="KitchenCounter"]
+polygon = PackedVector2Array(151, -104.999, 102, -103.999, 85.0004, -99.9993, 11.0004, -99.9991, -152, -100.999, -156, -181.999, 153, -180.999)
+
+[node name="Splash Screen" parent="." instance=ExtResource("7_e6sct")]
+visible = false
+enable = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)

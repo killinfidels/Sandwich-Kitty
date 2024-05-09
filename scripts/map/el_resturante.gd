@@ -25,7 +25,7 @@ extends Node2D
 # - leave
 # chairs and a class to check for free seats
 
-var customers = preload("res://objects/customer.tscn")
+var customers = preload("res://scenes/objects/customer.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

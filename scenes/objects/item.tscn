@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cvc2fqvxyhdy7"]
 
-[ext_resource type="Script" path="res://scripts/item.gd" id="1_hnd6f"]
+[ext_resource type="Script" path="res://scripts/objects/item.gd" id="1_hnd6f"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p6r77"]
 bounce = 0.5
@@ -15,5 +15,3 @@ can_sleep = false
 linear_damp = 1.0
 angular_damp = 1.0
 script = ExtResource("1_hnd6f")
-
-[connection signal="input_event" from="." to="." method="_on_input_event"]

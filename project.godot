@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Sandwich Kitty"
-run/main_scene="res://levels/el_resturante.tscn"
+run/main_scene="res://scenes/levels/el_resturante.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 [display]
 
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/project_time_tracker/plugin.cfg")
 
 [input]
 

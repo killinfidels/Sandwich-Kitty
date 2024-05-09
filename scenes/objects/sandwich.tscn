@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ekhbfh3cp4xk"]
+[gd_scene load_steps=11 format=3 uid="uid://ekhbfh3cp4xk"]
 
 [ext_resource type="Script" path="res://scripts/objects/sandwich.gd" id="1_ajrq7"]
 [ext_resource type="PackedScene" uid="uid://cvc2fqvxyhdy7" path="res://scenes/objects/item.tscn" id="1_kye12"]
@@ -11,37 +11,31 @@
 [ext_resource type="Texture2D" uid="uid://t0ucjh2fagty" path="res://assets/sandwich/mustard.png" id="8_eyt68"]
 [ext_resource type="Texture2D" uid="uid://pwba3rhj451d" path="res://assets/sandwich/top bread.png" id="9_ubahd"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_onlnr"]
-radius = 8.0
-
 [node name="Sandwich" instance=ExtResource("1_kye12")]
 script = ExtResource("1_ajrq7")
 
-[node name="Collision" type="CollisionShape2D" parent="." index="0"]
-shape = SubResource("CircleShape2D_onlnr")
-
-[node name="BottomBread" type="Sprite2D" parent="." index="1"]
+[node name="BottomBread" type="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_ai1ws")
 
-[node name="Cheese" type="Sprite2D" parent="." index="2"]
+[node name="Cheese" type="Sprite2D" parent="." index="1"]
 texture = ExtResource("3_uh5mc")
 
-[node name="Egg" type="Sprite2D" parent="." index="3"]
+[node name="Egg" type="Sprite2D" parent="." index="2"]
 texture = ExtResource("5_modl8")
 
-[node name="Meat" type="Sprite2D" parent="." index="4"]
+[node name="Meat" type="Sprite2D" parent="." index="3"]
 texture = ExtResource("7_d83x6")
 
-[node name="Cucumber" type="Sprite2D" parent="." index="5"]
+[node name="Cucumber" type="Sprite2D" parent="." index="4"]
 texture = ExtResource("4_a7wtq")
 
-[node name="TopBread" type="Sprite2D" parent="." index="6"]
+[node name="TopBread" type="Sprite2D" parent="." index="5"]
 texture = ExtResource("9_ubahd")
 
-[node name="Mustard" type="Sprite2D" parent="." index="7"]
+[node name="Mustard" type="Sprite2D" parent="." index="6"]
 visible = false
 texture = ExtResource("8_eyt68")
 
-[node name="Ketchup" type="Sprite2D" parent="." index="8"]
+[node name="Ketchup" type="Sprite2D" parent="." index="7"]
 visible = false
 texture = ExtResource("6_8lq4e")

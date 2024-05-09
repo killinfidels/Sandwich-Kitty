@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d1beafgjagvk1"]
+[gd_scene load_steps=9 format=3 uid="uid://d1beafgjagvk1"]
 
 [ext_resource type="Script" path="res://scripts/map/el_resturante.gd" id="1_6kmf4"]
 [ext_resource type="PackedScene" uid="uid://dacj1du4jnwm1" path="res://scenes/objects/dining_stool.tscn" id="2_6cs36"]
@@ -6,10 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://d676pgcwkjs1" path="res://scenes/objects/ingredient.tscn" id="4_et8r6"]
 [ext_resource type="PackedScene" uid="uid://ekhbfh3cp4xk" path="res://scenes/objects/sandwich.tscn" id="5_yahg8"]
 [ext_resource type="PackedScene" uid="uid://dw23ybckaeqp1" path="res://scenes/player/kitty.tscn" id="6_dedbo"]
+[ext_resource type="PackedScene" uid="uid://tr5n28nve3q" path="res://scenes/objects/sandwich_maker.tscn" id="6_o8r03"]
 [ext_resource type="PackedScene" uid="uid://du574glok87m4" path="res://scenes/game/splash_screen.tscn" id="7_e6sct"]
 
 [node name="El Resturante" type="Node2D"]
 script = ExtResource("1_6kmf4")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(2.00066, -1.9991)
+rotation = -3.14159
+texture = ExtResource("3_mob7j")
 
 [node name="Chairs" type="Node" parent="."]
 
@@ -34,10 +40,8 @@ position = Vector2(122, 21)
 [node name="Dining Stool7" parent="Chairs" instance=ExtResource("2_6cs36")]
 position = Vector2(120, 72)
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(2.00066, -1.9991)
-rotation = -3.14159
-texture = ExtResource("3_mob7j")
+[node name="Sandwich Maker" parent="." instance=ExtResource("6_o8r03")]
+position = Vector2(36, -24)
 
 [node name="Ingredient" parent="." instance=ExtResource("4_et8r6")]
 position = Vector2(-34, 25)

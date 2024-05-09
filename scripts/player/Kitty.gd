@@ -26,7 +26,7 @@ func _ready():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("interact"):
-		interact() # places
+		interact() # pick up
 	if Input.is_action_just_pressed("cancel"):
 		cancel() # places / throws
 
@@ -98,7 +98,12 @@ func interact():
 			print()
 			item = bodies[0]
 		
-	if !item is Ingredient and !item is Sandwich: # places item if there isnt one to pick up
+	if item is SandwichMaker:
+		var potential_Sammich = item.takeSandwich()
+		if potential_Sammich:
+			pickUp(potential_Sammich)
+		
+	if !item is Item: # pick if there is item
 		return
 	elif heldItems.size() >= carry_limit: # if an item is infront, check inv capacity
 		print("Carry limit reached!")
@@ -119,7 +124,12 @@ func pickUp(item):
 
 func place():
 	if item_detector.get_collider() is StaticBody2D:
-		print("You cant place this here dummy")
+		if !item_detector.get_collider() is SandwichMaker:
+			print("You cant place this here dummy")
+		else:
+			if item_detector.get_collider().placeIngredient(heldItems[0]):
+				removeItem(0)
+				print("put ingredient in machine :)")
 	else:
 		heldItems[0].placed(item_detector.global_position, look_direction)
 		removeItem(0)

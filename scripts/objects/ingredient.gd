@@ -3,16 +3,17 @@ extends Item
 class_name Ingredient
 
 enum INGREDIENTS {CHEESE, MEAT, EGG, CUCUMBER, KETCHUP, MUSTARD, BREADSLICE, BREADLOAF}
-var ingredient_strings = ["CHEESE", "MEAT", "EGG", "CUCUMBER", "KETCHUP", "MUSTARD", "BREADSLICE", "BREADLOAF"]
+var ingredient_strings := PackedStringArray(["CHEESE", "MEAT", "EGG", "CUCUMBER", "KETCHUP", "MUSTARD", "BREADSLICE", "BREADLOAF"])
 @export var INGREDIENT: INGREDIENTS
 @onready var sprite: Sprite2D = $Spritesheet
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("ingredient")
+	super._ready()
+	item_name = ingredient_strings[INGREDIENT]
+	print("	ingredient (" + item_name + ")")
 	sprite.frame = INGREDIENT
 	pickable = true
-	super._ready()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -33,9 +33,7 @@ texture = ExtResource("4_a7wtq")
 texture = ExtResource("9_ubahd")
 
 [node name="Mustard" type="Sprite2D" parent="." index="6"]
-visible = false
 texture = ExtResource("8_eyt68")
 
 [node name="Ketchup" type="Sprite2D" parent="." index="7"]
-visible = false
 texture = ExtResource("6_8lq4e")

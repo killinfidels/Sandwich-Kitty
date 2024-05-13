@@ -10,9 +10,9 @@ class_name Sandwich
 # -- move ingredient functions to a more generalized item class
 
 enum INGREDIENTS {CHEESE, EGG, MEAT, CUCUMBER, MUSTARD, KETCHUP}
-var ingredient_strings  := PackedStringArray(["CHEESE", "EGG", "MEAT", "CUCUMBER", "MUSTARD", "KETCHUP"])
+var ingredient_strings  = ["CHEESE", "EGG", "MEAT", "CUCUMBER", "MUSTARD", "KETCHUP"]
 @onready var ingredient_sprites = [$Cheese, $Egg, $Meat, $Cucumber, $Mustard, $Ketchup]
-var sandwich_ingredients := PackedInt32Array([])
+var sandwich_ingredients = []
 
 func _ready():
 	super._ready()
@@ -24,13 +24,16 @@ func _ready():
 func _process(delta):
 	super._process(delta)
 
-func make(ingredients : PackedInt32Array):
-	for ingredient in ingredients:
+func make(ingredients):
+	#ingredients is an array with the index of the ingredients to add
+	for item in ingredients:
 		# checks if ingredient already added
-		if sandwich_ingredients.find(ingredient):
-			print(ingredient_strings[ingredient] + " already added")
+		if sandwich_ingredients.find(item) != -1:
+			print(ingredient_strings[item] + " already added")
 			continue
 		# adds ingredient and turns on its sprite
-		sandwich_ingredients.append(ingredient)
-		ingredient_sprites[ingredient].visible = true
-		print(ingredient_strings[ingredient] + " added")
+		sandwich_ingredients.append(item)
+		ingredient_sprites[item].visible = true
+		print(ingredient_strings[item] + " added")
+	print("sandwich crafted!")
+	print()

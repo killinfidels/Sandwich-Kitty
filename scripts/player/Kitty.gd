@@ -9,7 +9,7 @@ class_name Kitty
 @export var throw_force : float = 200.0
 @export var look_direction : Vector2 = Vector2(0, 1)
 @export var carry_limit : int = 1
-var heldItems : Array
+var heldItems : Array[Item]
 var rayOrAreaDetection = true
 
 @onready var item_detector: RayCast2D = $ItemDetector
@@ -93,9 +93,6 @@ func interact():
 		var bodies = pickup_zone.get_overlapping_bodies()
 		if bodies:
 			bodies.sort_custom(pickUpZoneSort)
-			for thing in bodies:
-				print(thing.position.distance_to(pickup_zone.position))
-			print()
 			item = bodies[0]
 		
 	if item is SandwichMaker:
@@ -118,9 +115,9 @@ func cancel():
 			place()
 
 func pickUp(item):
-	print("Lets pretend this was picked up for now")
 	heldItems.append(item)
 	item.pickedUp(self, heldItems.size() - 1)
+	print(heldItems[0].item_name + " picked up")
 
 func place():
 	if item_detector.get_collider() is StaticBody2D:
@@ -132,8 +129,8 @@ func place():
 				print("put ingredient in machine :)")
 	else:
 		heldItems[0].placed(item_detector.global_position, look_direction)
+		print(heldItems[0].item_name + " placed")
 		removeItem(0)
-		print("Lets pretend you placed something just now")
 
 func throw():
 	heldItems[0].thrown(look_direction, throw_force)

@@ -45,6 +45,7 @@ func _integrate_forces(state):
 
 func pickedUp(thePickerUpper, stackNumber):
 	is_held = true
+	randomJiggle = false
 	held_by = thePickerUpper
 	stack_index = stackNumber
 	$Collision.disabled = true

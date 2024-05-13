@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d676pgcwkjs1"]
+[gd_scene load_steps=5 format=3 uid="uid://d676pgcwkjs1"]
 
 [ext_resource type="Script" path="res://scripts/objects/ingredient.gd" id="1_24fa0"]
 [ext_resource type="PackedScene" uid="uid://cvc2fqvxyhdy7" path="res://scenes/objects/item.tscn" id="1_kcfde"]
 [ext_resource type="Texture2D" uid="uid://bbnlahg2c8cft" path="res://assets/ingredients.png" id="1_so7ua"]
+[ext_resource type="Script" path="res://scenes/objects/Spritesheet.gd" id="4_d4vln"]
 
 [node name="Ingredient" instance=ExtResource("1_kcfde")]
 script = ExtResource("1_24fa0")
@@ -12,4 +13,4 @@ INGREDIENT = 0
 texture = ExtResource("1_so7ua")
 hframes = 4
 vframes = 2
-frame = 2
+script = ExtResource("4_d4vln")

@@ -2,7 +2,12 @@ extends StaticBody2D
 
 class_name SandwichMaker
 
-var held_ingredients := PackedInt32Array([])
+# TODO
+# PICK UP SANDWICH FROM MACHINE
+# ONLY ALLOW ONE OF EACH INGREDIENT INSIDE
+# FIX JITTERY ITEMS IN THE ITEM SCRIPT? MAYBE MOVE IT TO THIS SCRIPT
+
+var held_ingredients = [] #int
 
 var ingredient_objects = []
 
@@ -50,8 +55,10 @@ func add_ingredient(ingredient : Ingredient):
 
 func _on_crafting_timer_timeout():
 	crafted_sandwich = sandwichFile.instantiate()
+	get_parent().add_child(crafted_sandwich)
 	crafted_sandwich.make(held_ingredients)
 	crafted_sandwich.use(self)
-	get_parent().add_child(crafted_sandwich)
 	held_ingredients.clear()
+	for item in ingredient_objects:
+		item.queue_free()
 	ingredient_objects.clear()

@@ -9,9 +9,9 @@ class_name Sandwich
 # - ingredients, type is item
 # -- move ingredient functions to a more generalized item class
 
-enum INGREDIENTS {CHEESE, EGG, MEAT, CUCUMBER, MUSTARD, KETCHUP}
-var ingredient_strings  = ["CHEESE", "EGG", "MEAT", "CUCUMBER", "MUSTARD", "KETCHUP"]
-@onready var ingredient_sprites = [$Cheese, $Egg, $Meat, $Cucumber, $Mustard, $Ketchup]
+enum INGREDIENTS {CHEESE, MEAT, EGG, CUCUMBER, MUSTARD, KETCHUP}
+var ingredient_strings  = ["CHEESE", "MEAT", "EGG", "CUCUMBER", "MUSTARD", "KETCHUP"]
+@onready var ingredient_sprites = [$Cheese, $Meat, $Egg, $Cucumber, $Mustard, $Ketchup]
 var sandwich_ingredients = []
 
 func _ready():

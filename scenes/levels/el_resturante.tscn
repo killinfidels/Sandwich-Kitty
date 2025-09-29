@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d1beafgjagvk1"]
+[gd_scene load_steps=10 format=3 uid="uid://d1beafgjagvk1"]
 
 [ext_resource type="Script" path="res://scripts/map/el_resturante.gd" id="1_6kmf4"]
 [ext_resource type="PackedScene" uid="uid://dacj1du4jnwm1" path="res://scenes/objects/dining_stool.tscn" id="2_6cs36"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dw23ybckaeqp1" path="res://scenes/player/kitty.tscn" id="6_dedbo"]
 [ext_resource type="PackedScene" uid="uid://tr5n28nve3q" path="res://scenes/objects/sandwich_maker.tscn" id="6_o8r03"]
 [ext_resource type="PackedScene" uid="uid://du574glok87m4" path="res://scenes/game/splash_screen.tscn" id="7_e6sct"]
+[ext_resource type="Texture2D" uid="uid://c43jr3g106ivp" path="res://assets/customers.png" id="9_fggaa"]
 
 [node name="El Resturante" type="Node2D"]
 script = ExtResource("1_6kmf4")
@@ -85,7 +86,6 @@ carry_limit = 10
 INPUT_SCHEME = 1
 
 [node name="KitchenCounter" type="StaticBody2D" parent="."]
-visible = false
 position = Vector2(2.00066, -1.9991)
 rotation = -3.14159
 
@@ -107,3 +107,8 @@ enable = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+
+[node name="Customers" type="Sprite2D" parent="."]
+position = Vector2(-307, 24)
+scale = Vector2(2.6875, 2.6875)
+texture = ExtResource("9_fggaa")
